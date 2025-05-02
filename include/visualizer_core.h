@@ -1,15 +1,8 @@
 #pragma once
 
-#include <mutex>
-#include <thread>
-
-#include "shared_metrics.h"
+#include "visualizer_context.h"
 
 namespace VisualizerCore {
-void start_gui(int argc, char* argv[]);
-
-void update_metrics(const NumericMetrics& metrics);
-void update_vis_data(const VisualizationData& vis_data);
-
-void draw_gui();
+void start_gui(int argc, char* argv[], VisualizerContext* ctx);
+void draw_gui(VisualizerContext* ctx);
 }  // namespace VisualizerCore
